@@ -1,0 +1,229 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Modern Portfolio Design System - Amlesh Kumar
+Futuristic design with deep blue, cyan accents, and glassmorphism
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Core Background & Foreground */
+    --background: 240 10% 98%;
+    --foreground: 222 84% 4.9%;
+
+    /* Deep Blue Primary Palette */
+    --primary: 217 91% 30%; /* Deep blue #0b3d91 equivalent */
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 217 91% 25%;
+    --primary-light: 217 91% 35%;
+
+    /* Cyan Accent Palette */
+    --accent: 194 100% 50%; /* Cyan #00d4ff */
+    --accent-foreground: 222 84% 4.9%;
+    --accent-hover: 194 100% 45%;
+    --accent-light: 194 100% 85%;
+
+    /* Glassmorphism & Cards */
+    --glass: 240 10% 98% / 0.8;
+    --glass-border: 240 10% 90% / 0.2;
+    --card: 0 0% 100% / 0.9;
+    --card-foreground: 222 84% 4.9%;
+    --card-border: 240 10% 90%;
+
+    /* Neutral Grays */
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    /* Interactive Elements */
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 194 100% 50%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 84% 4.9%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 30%), hsl(217 91% 25%));
+    --gradient-accent: linear-gradient(135deg, hsl(194 100% 50%), hsl(194 100% 45%));
+    --gradient-hero: linear-gradient(135deg, hsl(217 91% 30%) 0%, hsl(194 100% 50%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100% / 0.1), hsl(240 10% 98% / 0.05));
+
+    /* Shadows & Effects */
+    --shadow-glass: 0 8px 32px 0 hsl(217 91% 30% / 0.1);
+    --shadow-card: 0 4px 16px 0 hsl(217 91% 30% / 0.08);
+    --shadow-hover: 0 8px 24px 0 hsl(194 100% 50% / 0.15);
+
+    /* Animation Durations */
+    --transition-fast: 0.15s;
+    --transition-normal: 0.3s;
+    --transition-slow: 0.5s;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark Mode Core */
+    --background: 222 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    /* Dark Mode Primary */
+    --primary: 194 100% 50%; /* Cyan becomes primary in dark */
+    --primary-foreground: 222 84% 4.9%;
+    --primary-hover: 194 100% 55%;
+    --primary-light: 194 100% 60%;
+
+    /* Dark Mode Accent */
+    --accent: 217 91% 35%; /* Deep blue becomes accent in dark */
+    --accent-foreground: 210 40% 98%;
+    --accent-hover: 217 91% 40%;
+    --accent-light: 217 91% 60%;
+
+    /* Dark Glassmorphism */
+    --glass: 222 84% 4.9% / 0.8;
+    --glass-border: 240 10% 20% / 0.2;
+    --card: 222 84% 4.9% / 0.9;
+    --card-foreground: 210 40% 98%;
+    --card-border: 240 10% 20%;
+
+    /* Dark Neutrals */
+    --secondary: 217 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    /* Dark Interactive */
+    --border: 217 32.6% 17.5%;
+    --input: 217 32.6% 17.5%;
+    --ring: 194 100% 50%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Dark Popover */
+    --popover: 222 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Dark Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(194 100% 50%), hsl(194 100% 55%));
+    --gradient-accent: linear-gradient(135deg, hsl(217 91% 35%), hsl(217 91% 40%));
+    --gradient-hero: linear-gradient(135deg, hsl(194 100% 50%) 0%, hsl(217 91% 35%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(222 84% 4.9% / 0.1), hsl(217 32.6% 17.5% / 0.05));
+
+    /* Dark Shadows */
+    --shadow-glass: 0 8px 32px 0 hsl(0 0% 0% / 0.3);
+    --shadow-card: 0 4px 16px 0 hsl(0 0% 0% / 0.2);
+    --shadow-hover: 0 8px 24px 0 hsl(194 100% 50% / 0.25);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-500;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Glass morphism effect */
+  .glass {
+    @apply backdrop-blur-md bg-glass border border-glass-border;
+    box-shadow: var(--shadow-glass);
+  }
+
+  /* Hero gradient background */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  /* Card effects */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-2xl hover:-translate-y-1;
+    box-shadow: var(--shadow-card);
+  }
+
+  .card-hover:hover {
+    box-shadow: var(--shadow-hover);
+  }
+
+  /* Skill chip animation */
+  .skill-chip {
+    @apply inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-300;
+    @apply bg-secondary text-secondary-foreground hover:bg-accent hover:text-accent-foreground;
+    @apply border border-border hover:border-accent;
+  }
+
+  /* Button variants */
+  .btn-hero {
+    @apply px-8 py-3 rounded-lg font-semibold text-base transition-all duration-300;
+    background: var(--gradient-primary);
+    @apply text-primary-foreground hover:shadow-lg hover:-translate-y-0.5;
+  }
+
+  .btn-outline {
+    @apply px-6 py-2.5 rounded-lg font-medium border-2 border-accent text-accent;
+    @apply hover:bg-accent hover:text-accent-foreground transition-all duration-300;
+  }
+
+  /* Profile image effect */
+  .profile-image {
+    @apply relative w-64 h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 mx-auto rounded-full overflow-hidden;
+    @apply border-4 border-accent shadow-2xl transition-all duration-500;
+    @apply hover:scale-105 hover:border-primary;
+  }
+
+  /* Section spacing */
+  .section-padding {
+    @apply py-20 px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Animated background blob */
+  .blob {
+    @apply absolute rounded-full mix-blend-multiply filter blur-xl opacity-70;
+    animation: blob 7s infinite;
+  }
+
+  @keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+  }
+}
