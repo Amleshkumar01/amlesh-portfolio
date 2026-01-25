@@ -134,7 +134,7 @@ export const Hero = () => {
               className="flex justify-center lg:justify-start gap-4"
             >
               <motion.a
-                href="https://github.com/amleshkumar"
+                href="https://github.com/Amleshkumar01"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-full glass hover:bg-accent/20 transition-all duration-300 text-white"
@@ -144,7 +144,7 @@ export const Hero = () => {
                 <Github className="w-5 h-5" />
               </motion.a>
               <motion.a
-                href="https://linkedin.com/in/amleshkumar"
+                href="https://www.linkedin.com/in/amlesh-kumar23/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-full glass hover:bg-accent/20 transition-all duration-300 text-white"
