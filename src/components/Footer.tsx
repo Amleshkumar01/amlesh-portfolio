@@ -79,7 +79,7 @@ export const Footer = () => {
           >
             <h4 className="text-lg font-semibold mb-4">Get In Touch</h4>
             <div className="space-y-2 text-background/80">
-              <p>📧 amleshkumar@example.com</p>
+              <p>📧 amleshkumar647544@gmail.com</p>
               <p>📍 Bhopal, Madhya Pradesh</p>
               <p>🎓 LNCT University</p>
             </div>
