@@ -5,18 +5,18 @@ import { ExternalLink, Github, X, Code, Globe, Shield } from 'lucide-react';
 const projects = [
   {
     id: 1,
-    title: 'Campus Security Management System',
-    description: 'A comprehensive web application for campus security monitoring with real-time alerts and visitor management.',
+    title: 'CyberGuard AI – Real-Time Network Intrusion Detection System',
+    description: 'An AI-powered real-time Network Intrusion Detection System (NIDS) that monitors live traffic, detects suspicious activities, generates SOC-style alerts, and visualizes attack analytics through an interactive dashboard.',
     image: '/api/placeholder/400/250',
-    category: 'Full Stack',
-    technologies: ['React', 'Node.js', 'MongoDB', 'Socket.io', 'JWT'],
+    category: 'Cybersecurity',
+    technologies: [ 'Python' , 'Django' , 'Scapy' , 'SQLITE' , 'HTML' , 'CSS' , 'Java Script'  ],
     features: [
-      'Real-time security alerts and notifications',
-      'Visitor registration and tracking system',
-      'Security guard patrol management',
-      'Incident reporting and documentation',
-      'Role-based access control',
-      'Dashboard with analytics and reports'
+      'Real-time packet sniffing using Scapy',
+      'Flow-based network traffic analysis',
+      'Detection of port scanning attacks',
+      'Incident reporting and documentation  ',
+      'SOC-style real-time alert system',
+      'Top attacker IP and targeted port analysis'
     ],
     liveUrl: '#',
     githubUrl: '#',
@@ -24,18 +24,19 @@ const projects = [
   },
   {
     id: 2,
-    title: 'Network Vulnerability Scanner',
-    description: 'A Python-based tool for automated network security assessment and vulnerability detection.',
-    image: '/api/placeholder/400/250',
-    category: 'Cybersecurity',
-    technologies: ['Python', 'Nmap', 'Scapy', 'Flask', 'SQLite'],
-    features: [
-      'Automated port scanning and service detection',
-      'Vulnerability assessment using CVE database',
-      'Network topology mapping',
-      'Detailed security reports generation',
-      'Web-based interface for easy management',
-      'Scheduled scanning capabilities'
+   title: 'E-Commerce ',
+description: 'A Django-based e-commerce web application for browsing products, managing carts, placing orders, and handling user authentication.',
+image: '/api/placeholder/400/250',
+category: 'Web Development',
+technologies: ['Python', 'Django', 'SQLite', 'HTML', 'CSS', 'JavaScript', 'Bootstrap'],
+features: [
+'User registration and login system',
+'Product listing with detailed product pages',
+'Shopping cart management',
+'Order placement and checkout flow',
+'Admin panel for managing products and orders',
+'Search and category-based product filtering',
+'Responsive design for mobile and desktop users'
     ],
     liveUrl: '#',
     githubUrl: '#',
@@ -43,18 +44,18 @@ const projects = [
   },
   {
     id: 3,
-    title: 'Personal Finance Tracker',
-    description: 'A modern web application for tracking personal expenses and financial goals with insightful analytics.',
-    image: '/api/placeholder/400/250',
-    category: 'Web Development',
-    technologies: ['React', 'TypeScript', 'Chart.js', 'Firebase', 'Tailwind CSS'],
-    features: [
-      'Expense tracking with categories',
-      'Budget planning and monitoring',
-      'Financial goals setting and tracking',
-      'Interactive charts and analytics',
-      'Bank account integration (mock)',
-      'Export data to PDF/Excel'
+    title: 'Airline Management System',
+description: 'A Salesforce-based airline management platform designed to streamline flight operations, passenger bookings, and administrative processes through a centralized cloud solution.',
+image: '/api/placeholder/400/250',
+category: 'Salesforce Development',
+technologies: ['Salesforce', 'Apex', 'Lightning Web Components (LWC)', 'SOQL', 'Flow Builder', 'Salesforce CRM'],
+features: [
+'Passenger registration and profile management',
+'Flight scheduling and route management',
+'Online ticket booking and reservation system',
+'Real-time seat availability tracking',
+'Automated booking confirmations using Salesforce Flows',
+'Admin dashboard for managing flights, passengers, and bookings'
     ],
     liveUrl: '#',
     githubUrl: '#',
