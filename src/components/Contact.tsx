@@ -18,7 +18,7 @@ export const Contact = () => {
     location: 'Bhopal, Madhya Pradesh, India',
     phone: 'Available upon request',
     // Note: Twitter/X link yahan adjust kar sakte ho.
-    twitterHref: 'https://twitter.com/',
+    twitterHref: '﻿https://x.com/Amlesh_yadav07',
     githubHref: 'https://github.com/Amleshkumar01',
     linkedinHref: 'https://www.linkedin.com/in/amlesh-kumar23/'
   };
