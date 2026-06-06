@@ -5,7 +5,7 @@ import { ExternalLink, Github, X, Code, Globe, Shield } from 'lucide-react';
 const projects = [
   {
     id: 1,
-    title: 'CyberGuard AI – Real-Time Network Intrusion Detection System',
+    title: 'CyberGuard AI ',
     description: 'An AI-powered real-time Network Intrusion Detection System (NIDS) that monitors live traffic, detects suspicious activities, generates SOC-style alerts, and visualizes attack analytics through an interactive dashboard.',
     image: '/api/placeholder/400/250',
     category: 'Cybersecurity',
@@ -19,7 +19,7 @@ const projects = [
       'Top attacker IP and targeted port analysis'
     ],
     liveUrl: '#',
-    githubUrl: '#',
+    githubUrl: 'https://github.com/Amleshkumar01/CyberGuard-AI',
     status: 'In Development'
   },
   {
@@ -39,7 +39,7 @@ features: [
 'Responsive design for mobile and desktop users'
     ],
     liveUrl: '#',
-    githubUrl: '#',
+    githubUrl: 'https://github.com/Amleshkumar01/e-com-project',
     status: 'Completed'
   },
   {
