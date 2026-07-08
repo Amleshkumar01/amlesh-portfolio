@@ -17,32 +17,6 @@ const pageTitle = "Amlesh Kumar | B.Tech CSE Student, Cybersecurity & Software D
 const pageDescription =
   "Amlesh Kumar's portfolio. B.Tech CSE student at LNCT University, Bhopal, focused on cybersecurity, software development, and modern web projects.";
 
-const personSchema = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  name: siteName,
-  alternateName: ["Amlesh Kumar"],
-  jobTitle: "B.Tech CSE Student, Cybersecurity & Software Developer",
-  description: pageDescription,
-  url: siteUrl,
-  image: shareImageUrl,
-  sameAs: [
-    "https://github.com/Amleshkumar01",
-    "https://www.linkedin.com/in/amlesh-kumar23/",
-  ],
-  alumniOf: {
-    "@type": "CollegeOrUniversity",
-    name: "LNCT University",
-  },
-  knowsAbout: [
-    "Cybersecurity",
-    "Software Development",
-    "Web Development",
-    "React",
-    "TypeScript",
-  ],
-};
-
 const App = () => {
   useEffect(() => {
     const setMeta = (attribute: "name" | "property", key: string, content: string) => {
@@ -94,20 +68,6 @@ const App = () => {
       link.href = siteUrl;
       document.head.appendChild(link);
     }
-
-    const schemaId = "person-schema";
-    const schemaScript = document.getElementById(schemaId) as HTMLScriptElement | null;
-
-    if (schemaScript) {
-      schemaScript.textContent = JSON.stringify(personSchema);
-      return;
-    }
-
-    const script = document.createElement("script");
-    script.id = schemaId;
-    script.type = "application/ld+json";
-    script.textContent = JSON.stringify(personSchema);
-    document.head.appendChild(script);
   }, []);
 
   return (
