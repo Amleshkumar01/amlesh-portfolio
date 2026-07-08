@@ -19,7 +19,12 @@ export const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+      itemScope
+      itemType="https://schema.org/Person"
+    >
       {/* Animated Background */}
       <div className="absolute inset-0 hero-gradient">
         <motion.div
@@ -73,6 +78,7 @@ export const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4"
+              itemProp="name"
             >
               Amlesh Kumar
             </motion.h1>
@@ -82,6 +88,7 @@ export const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
               className="text-xl sm:text-2xl text-white/90 mb-6"
+              itemProp="jobTitle"
             >
               B.Tech CSE (2023–2027) | Aspiring Software Developer & Cybersecurity Enthusiast
             </motion.h2>
@@ -91,6 +98,7 @@ export const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1 }}
               className="text-lg text-white/80 mb-8 max-w-2xl"
+              itemProp="description"
             >
               Passionate computer science student at LNCT University, Bhopal, exploring the realms of software development and cybersecurity. Building innovative solutions with modern technologies.
             </motion.p>
@@ -169,6 +177,7 @@ export const Hero = () => {
                 src={profileImage}
                 alt="Amlesh Kumar - Profile Picture"
                 className="w-full h-full object-cover"
+                itemProp="image"
               />
               <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-accent/20 to-primary/20" />
             </motion.div>

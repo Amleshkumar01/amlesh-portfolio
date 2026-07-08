@@ -5,6 +5,7 @@ import { ThemeToggle } from './ThemeToggle';
 
 const navItems = [
   { href: '#home', label: 'Home' },
+  { href: '#about', label: 'About' },
   { href: '#skills', label: 'Skills' },
   { href: '#education', label: 'Education' },
   { href: '#projects', label: 'Projects' },
@@ -57,7 +58,7 @@ export const Navigation = () => {
             whileHover={{ scale: 1.05 }}
             className="font-bold text-xl text-primary"
           >
-            AK
+            Amlesh Kumar
           </motion.div>
 
           {/* Desktop Navigation */}
