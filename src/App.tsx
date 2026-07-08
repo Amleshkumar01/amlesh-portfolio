@@ -10,7 +10,7 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 const siteName = "Amlesh Kumar";
-const siteUrl = "https://amleshkumar.tech";
+const siteUrl = "https://www.amleshkumar.tech";
 const shareImagePath = "/og-image.png";
 const shareImageUrl = `${siteUrl}${shareImagePath}`;
 const pageTitle = "Amlesh Kumar | B.Tech CSE Student, Cybersecurity & Software Developer";
