@@ -8,9 +8,39 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Amlesh Kumar",
+  alternateName: ["Amlesh Kumar"],
+  jobTitle: "B.Tech CSE Student, Cybersecurity & Software Developer",
+  description:
+    "B.Tech CSE student at LNCT University, Bhopal, focused on cybersecurity, software development, and modern web projects.",
+  url: typeof window !== "undefined" ? window.location.origin : "/",
+  sameAs: [
+    "https://github.com/Amleshkumar01",
+    "https://www.linkedin.com/in/amlesh-kumar23/",
+  ],
+  alumniOf: {
+    "@type": "CollegeOrUniversity",
+    name: "LNCT University",
+  },
+  knowsAbout: [
+    "Cybersecurity",
+    "Software Development",
+    "Web Development",
+    "React",
+    "TypeScript",
+  ],
+};
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
       <Toaster />
       <Sonner />
       <BrowserRouter>

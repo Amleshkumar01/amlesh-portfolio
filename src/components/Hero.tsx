@@ -74,10 +74,7 @@ export const Hero = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4"
             >
-              Hi, I'm{' '}
-              <span className="text-cyan-400 font-bold">
-                Amlesh Kumar
-              </span>
+              Amlesh Kumar
             </motion.h1>
 
             <motion.h2
