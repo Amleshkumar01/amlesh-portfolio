@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Download, Mail, Github, Linkedin } from 'lucide-react';
-import profileImage from '../assets/profile.png';
+import profileImage from '../assets/profile.jpeg';
 
 export const Hero = () => {
   const scrollToContact = () => {
@@ -21,7 +21,7 @@ export const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16"
       itemScope
       itemType="https://schema.org/Person"
     >
@@ -68,7 +68,7 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="inline-block px-4 py-2 rounded-full bg-white/10 text-white text-sm font-medium mb-6 backdrop-blur-sm"
+              className="inline-block px-4 py-2 rounded-full bg-foreground/10 text-foreground text-sm font-medium mb-6 backdrop-blur-sm"
             >
               👋 Welcome to my portfolio
             </motion.div>
@@ -77,7 +77,7 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4"
+              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-4"
               itemProp="name"
             >
               Amlesh Kumar
@@ -87,7 +87,7 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="text-xl sm:text-2xl text-white/90 mb-6"
+              className="text-xl sm:text-2xl text-foreground/85 mb-6"
               itemProp="jobTitle"
             >
               B.Tech CSE (2023–2027) | Aspiring Software Developer & Cybersecurity Enthusiast
@@ -97,7 +97,7 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1 }}
-              className="text-lg text-white/80 mb-8 max-w-2xl"
+              className="text-lg text-foreground/75 mb-8 max-w-2xl"
               itemProp="description"
             >
               Passionate computer science student at LNCT University, Bhopal, exploring the realms of software development and cybersecurity. Building innovative solutions with modern technologies.
@@ -142,7 +142,7 @@ export const Hero = () => {
                 href="https://github.com/Amleshkumar01"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full glass hover:bg-accent/20 transition-all duration-300 text-white"
+                className="p-3 rounded-full border border-foreground/20 bg-foreground/10 text-foreground hover:bg-accent hover:text-accent-foreground transition-all duration-300"
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.9 }}
               >
@@ -152,7 +152,7 @@ export const Hero = () => {
                 href="https://www.linkedin.com/in/amlesh-kumar23/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full glass hover:bg-accent/20 transition-all duration-300 text-white"
+                className="p-3 rounded-full border border-foreground/20 bg-foreground/10 text-foreground hover:bg-accent hover:text-accent-foreground transition-all duration-300"
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.9 }}
               >
@@ -176,10 +176,10 @@ export const Hero = () => {
               <img
                 src={profileImage}
                 alt="Amlesh Kumar - Profile Picture"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-[center_68%]"
                 itemProp="image"
               />
-              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-accent/20 to-primary/20" />
+              <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-tr from-accent/20 to-transparent" />
             </motion.div>
           </motion.div>
         </div>
@@ -194,7 +194,7 @@ export const Hero = () => {
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center"
+            className="w-6 h-10 border-2 border-foreground/50 rounded-full flex justify-center"
           >
             <motion.div
               animate={{ y: [0, 12, 0] }}

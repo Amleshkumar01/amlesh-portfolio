@@ -60,6 +60,23 @@ features: [
     liveUrl: '#',
     githubUrl: '#',
     status: 'Completed'
+  },
+  {
+    id: 4,
+    title: 'Placement IQ',
+    description: 'A placement preparation platform that helps students organize their learning, practice technical skills, and build confidence for software development opportunities.',
+    image: '/api/placeholder/400/250',
+    category: 'Web Development',
+    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'JavaScript'],
+    features: [
+      'Structured placement preparation workflow',
+      'Technical practice and progress tracking',
+      'Clean dashboard experience for students',
+      'Responsive design for mobile and desktop users'
+    ],
+    liveUrl: '#',
+    githubUrl: '#',
+    status: 'In Development'
   }
 ];
 
@@ -84,7 +101,7 @@ export const Projects = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}

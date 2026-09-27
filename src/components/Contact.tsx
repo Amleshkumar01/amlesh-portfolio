@@ -129,7 +129,7 @@ export const Contact = () => {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.9 }}
-                  className="p-3 rounded-full glass hover:bg-accent/20 transition-all duration-300 text-white"
+                  className="p-3 rounded-full glass text-foreground hover:bg-accent/20 transition-all duration-300"
                   aria-label="GitHub"
                 >
                   <Github className="w-5 h-5" />
@@ -141,7 +141,7 @@ export const Contact = () => {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.9 }}
-                  className="p-3 rounded-full glass hover:bg-accent/20 transition-all duration-300 text-white"
+                  className="p-3 rounded-full glass text-foreground hover:bg-accent/20 transition-all duration-300"
                   aria-label="LinkedIn"
                 >
                   <Linkedin className="w-5 h-5" />
@@ -153,7 +153,7 @@ export const Contact = () => {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.9 }}
-                  className="p-3 rounded-full glass hover:bg-accent/20 transition-all duration-300 text-white"
+                  className="p-3 rounded-full glass text-foreground hover:bg-accent/20 transition-all duration-300"
                   aria-label="Twitter/X"
                 >
                   <Twitter className="w-5 h-5" />

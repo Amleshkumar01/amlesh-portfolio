@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,55 +12,55 @@ All colors MUST be HSL.
 @layer base {
   :root {
     /* Core Background & Foreground */
-    --background: 240 10% 98%;
-    --foreground: 222 84% 4.9%;
+    --background: 39 38% 95%;
+    --foreground: 20 18% 14%;
 
     /* Deep Blue Primary Palette */
-    --primary: 217 91% 30%; /* Deep blue #0b3d91 equivalent */
-    --primary-foreground: 0 0% 100%;
-    --primary-hover: 217 91% 25%;
-    --primary-light: 217 91% 35%;
+    --primary: 20 18% 14%;
+    --primary-foreground: 39 38% 95%;
+    --primary-hover: 20 18% 22%;
+    --primary-light: 20 18% 30%;
 
     /* Cyan Accent Palette */
-    --accent: 194 100% 50%; /* Cyan #00d4ff */
-    --accent-foreground: 222 84% 4.9%;
-    --accent-hover: 194 100% 45%;
-    --accent-light: 194 100% 85%;
+    --accent: 12 75% 55%;
+    --accent-foreground: 39 38% 95%;
+    --accent-hover: 12 75% 47%;
+    --accent-light: 12 75% 85%;
 
     /* Glassmorphism & Cards */
-    --glass: 240 10% 98% / 0.8;
-    --glass-border: 240 10% 90% / 0.2;
-    --card: 0 0% 100% / 0.9;
-    --card-foreground: 222 84% 4.9%;
-    --card-border: 240 10% 90%;
+    --glass: 39 38% 98% / 0.72;
+    --glass-border: 20 18% 14% / 0.13;
+    --card: 39 38% 98% / 0.92;
+    --card-foreground: 20 18% 14%;
+    --card-border: 20 18% 14% / 0.14;
 
     /* Neutral Grays */
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
+    --secondary: 35 24% 88%;
+    --secondary-foreground: 20 18% 14%;
+    --muted: 35 24% 90%;
+    --muted-foreground: 20 10% 42%;
 
     /* Interactive Elements */
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 194 100% 50%;
+    --border: 20 18% 14% / 0.16;
+    --input: 20 18% 14% / 0.16;
+    --ring: 12 75% 55%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
     /* Popover */
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 84% 4.9%;
+    --popover: 39 38% 98%;
+    --popover-foreground: 20 18% 14%;
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 30%), hsl(217 91% 25%));
-    --gradient-accent: linear-gradient(135deg, hsl(194 100% 50%), hsl(194 100% 45%));
-    --gradient-hero: linear-gradient(135deg, hsl(217 91% 30%) 0%, hsl(194 100% 50%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100% / 0.1), hsl(240 10% 98% / 0.05));
+    --gradient-primary: linear-gradient(135deg, hsl(20 18% 14%), hsl(12 35% 27%));
+    --gradient-accent: linear-gradient(135deg, hsl(12 75% 55%), hsl(21 78% 48%));
+    --gradient-hero: linear-gradient(115deg, hsl(39 38% 97%) 0%, hsl(36 48% 93%) 58%, hsl(16 55% 91%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(39 38% 98% / 0.9), hsl(35 24% 90% / 0.65));
 
     /* Shadows & Effects */
-    --shadow-glass: 0 8px 32px 0 hsl(217 91% 30% / 0.1);
-    --shadow-card: 0 4px 16px 0 hsl(217 91% 30% / 0.08);
-    --shadow-hover: 0 8px 24px 0 hsl(194 100% 50% / 0.15);
+    --shadow-glass: 0 14px 36px hsl(20 18% 14% / 0.08);
+    --shadow-card: 0 10px 24px hsl(20 18% 14% / 0.08);
+    --shadow-hover: 0 18px 32px hsl(12 75% 55% / 0.18);
 
     /* Animation Durations */
     --transition-fast: 0.15s;
@@ -86,55 +88,55 @@ All colors MUST be HSL.
 
   .dark {
     /* Dark Mode Core */
-    --background: 222 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 20 18% 10%;
+    --foreground: 39 38% 95%;
 
     /* Dark Mode Primary */
-    --primary: 194 100% 50%; /* Cyan becomes primary in dark */
-    --primary-foreground: 222 84% 4.9%;
-    --primary-hover: 194 100% 55%;
-    --primary-light: 194 100% 60%;
+    --primary: 39 38% 95%;
+    --primary-foreground: 20 18% 10%;
+    --primary-hover: 39 38% 88%;
+    --primary-light: 39 38% 80%;
 
     /* Dark Mode Accent */
-    --accent: 217 91% 35%; /* Deep blue becomes accent in dark */
-    --accent-foreground: 210 40% 98%;
-    --accent-hover: 217 91% 40%;
-    --accent-light: 217 91% 60%;
+    --accent: 12 75% 60%;
+    --accent-foreground: 20 18% 10%;
+    --accent-hover: 12 75% 68%;
+    --accent-light: 12 75% 78%;
 
     /* Dark Glassmorphism */
-    --glass: 222 84% 4.9% / 0.8;
-    --glass-border: 240 10% 20% / 0.2;
-    --card: 222 84% 4.9% / 0.9;
-    --card-foreground: 210 40% 98%;
-    --card-border: 240 10% 20%;
+    --glass: 20 18% 10% / 0.78;
+    --glass-border: 39 38% 95% / 0.14;
+    --card: 20 18% 13% / 0.94;
+    --card-foreground: 39 38% 95%;
+    --card-border: 39 38% 95% / 0.14;
 
     /* Dark Neutrals */
-    --secondary: 217 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --secondary: 20 14% 20%;
+    --secondary-foreground: 39 38% 95%;
+    --muted: 20 14% 20%;
+    --muted-foreground: 35 15% 68%;
 
     /* Dark Interactive */
-    --border: 217 32.6% 17.5%;
-    --input: 217 32.6% 17.5%;
-    --ring: 194 100% 50%;
+    --border: 39 38% 95% / 0.16;
+    --input: 39 38% 95% / 0.16;
+    --ring: 12 75% 60%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
     /* Dark Popover */
-    --popover: 222 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 20 18% 13%;
+    --popover-foreground: 39 38% 95%;
 
     /* Dark Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(194 100% 50%), hsl(194 100% 55%));
-    --gradient-accent: linear-gradient(135deg, hsl(217 91% 35%), hsl(217 91% 40%));
-    --gradient-hero: linear-gradient(135deg, hsl(194 100% 50%) 0%, hsl(217 91% 35%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(222 84% 4.9% / 0.1), hsl(217 32.6% 17.5% / 0.05));
+    --gradient-primary: linear-gradient(135deg, hsl(39 38% 95%), hsl(35 24% 82%));
+    --gradient-accent: linear-gradient(135deg, hsl(12 75% 60%), hsl(21 78% 52%));
+    --gradient-hero: linear-gradient(115deg, hsl(20 18% 10%) 0%, hsl(20 24% 16%) 56%, hsl(12 38% 25%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(20 18% 15% / 0.95), hsl(20 14% 20% / 0.8));
 
     /* Dark Shadows */
-    --shadow-glass: 0 8px 32px 0 hsl(0 0% 0% / 0.3);
-    --shadow-card: 0 4px 16px 0 hsl(0 0% 0% / 0.2);
-    --shadow-hover: 0 8px 24px 0 hsl(194 100% 50% / 0.25);
+    --shadow-glass: 0 14px 36px hsl(0 0% 0% / 0.3);
+    --shadow-card: 0 10px 24px hsl(0 0% 0% / 0.22);
+    --shadow-hover: 0 18px 32px hsl(12 75% 60% / 0.2);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -153,7 +155,9 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground transition-colors duration-500;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'DM Sans', 'Segoe UI', sans-serif;
+    background-image: radial-gradient(hsl(20 18% 14% / 0.055) 0.7px, transparent 0.7px);
+    background-size: 16px 16px;
   }
 
   html {
@@ -171,6 +175,24 @@ All colors MUST be HSL.
   /* Hero gradient background */
   .hero-gradient {
     background: var(--gradient-hero);
+    isolation: isolate;
+  }
+
+  .hero-gradient::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(90deg, hsl(39 38% 98% / 0.42), transparent 62%);
+  }
+
+  .dark .hero-gradient::after {
+    background: linear-gradient(90deg, hsl(20 18% 10% / 0.38), transparent 62%);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Space Grotesk', 'DM Sans', sans-serif;
+    letter-spacing: -0.02em;
   }
 
   /* Card effects */
@@ -192,20 +214,20 @@ All colors MUST be HSL.
 
   /* Button variants */
   .btn-hero {
-    @apply px-8 py-3 rounded-lg font-semibold text-base transition-all duration-300;
+    @apply px-8 py-3 rounded-md font-semibold text-base transition-all duration-300;
     background: var(--gradient-primary);
     @apply text-primary-foreground hover:shadow-lg hover:-translate-y-0.5;
   }
 
   .btn-outline {
-    @apply px-6 py-2.5 rounded-lg font-medium border-2 border-accent text-accent;
+    @apply px-6 py-2.5 rounded-md font-medium border-2 border-accent text-accent;
     @apply hover:bg-accent hover:text-accent-foreground transition-all duration-300;
   }
 
   /* Profile image effect */
   .profile-image {
-    @apply relative w-64 h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 mx-auto rounded-full overflow-hidden;
-    @apply border-4 border-accent shadow-2xl transition-all duration-500;
+    @apply relative w-64 h-80 lg:w-80 lg:h-[28rem] xl:w-96 xl:h-[30rem] mx-auto rounded-[2rem] overflow-hidden;
+    @apply border-4 border-accent shadow-2xl transition-all duration-500 rotate-3;
     @apply hover:scale-105 hover:border-primary;
   }
 
@@ -216,7 +238,7 @@ All colors MUST be HSL.
 
   /* Animated background blob */
   .blob {
-    @apply absolute rounded-full mix-blend-multiply filter blur-xl opacity-70;
+    @apply absolute rounded-full mix-blend-screen filter blur-xl opacity-40;
     animation: blob 7s infinite;
   }
 

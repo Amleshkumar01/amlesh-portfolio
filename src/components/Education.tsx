@@ -8,6 +8,11 @@ const educationData = {
   duration: '2023 - 2027',
   cgpa: '8.5 / 10',
   status: 'Currently Pursuing',
+  school: 'R.K.N.S.H.S. Sirsiya Gopinathpur, Muzaffarpur',
+  schoolResults: [
+    { level: 'Class 10 (2020 - 2021)', percentage: '67.8%' },
+    { level: 'Class 12 (2021 - 2023)', percentage: '68.6%' }
+  ],
   relevantCourses: [
     'Data Structures & Algorithms',
     'Object-Oriented Programming',
@@ -108,6 +113,37 @@ export const Education = () => {
                   <div className="text-sm text-muted-foreground">Current CGPA</div>
                 </div>
               </div>
+            </div>
+          </motion.div>
+
+          {/* School Education */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="glass rounded-2xl p-6 mb-12"
+          >
+            <div className="flex items-start gap-4 mb-6">
+              <div className="p-3 rounded-xl bg-accent/10">
+                <BookOpen className="w-7 h-7 text-accent" />
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-foreground mb-2">
+                  School Education
+                </h3>
+                <p className="text-lg text-accent font-semibold">
+                  {educationData.school}
+                </p>
+              </div>
+            </div>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {educationData.schoolResults.map((result) => (
+                <div key={result.level} className="flex items-center justify-between rounded-xl bg-primary/5 px-5 py-4">
+                  <span className="font-medium text-foreground">{result.level}</span>
+                  <span className="text-xl font-bold text-accent">{result.percentage}</span>
+                </div>
+              ))}
             </div>
           </motion.div>
 
