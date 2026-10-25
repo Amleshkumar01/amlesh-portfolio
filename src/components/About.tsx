@@ -29,7 +29,7 @@ export const About = () => {
     <section id="about" className="section-padding bg-background">
       <div className="container mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
@@ -40,9 +40,10 @@ export const About = () => {
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground leading-8">
             Amlesh Kumar is a B.Tech Computer Science Engineering student at LNCT University, Bhopal,
-            building a portfolio around software development, cybersecurity, and modern web applications.
-            The focus is on practical problem solving, secure coding, and projects that demonstrate real
-            technical depth rather than generic landing-page content.
+            focused on software development, cybersecurity, and modern web applications.
+            He is a Salesforce Certified Platform Developer and builds projects with React,
+            TypeScript, Python, Django, and Salesforce, including CyberGuard AI, a network
+            intrusion detection project, and Placement IQ, a placement preparation platform.
           </p>
         </motion.div>
 
@@ -50,7 +51,7 @@ export const About = () => {
           {highlights.map((item, index) => (
             <motion.div
               key={item.label}
-              initial={{ opacity: 0, y: 30 }}
+              initial={false}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}

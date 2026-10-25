@@ -7,13 +7,16 @@ export const ThemeToggle = () => {
 
   useEffect(() => {
     // Check for saved theme preference or default to light mode
-    const savedTheme = localStorage.getItem('theme');
+    let savedTheme: string | null = null;
+    try { savedTheme = localStorage.getItem('theme'); } catch { /* Storage may be unavailable. */ }
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     
-    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-      setIsDark(true);
-      document.documentElement.classList.add('dark');
-    }
+    const dark = savedTheme === 'dark' || (!savedTheme && prefersDark);
+    setIsDark(dark);
+    document.documentElement.classList.toggle('dark', dark);
+    const syncTheme = (event: Event) => setIsDark((event as CustomEvent<boolean>).detail);
+    window.addEventListener('portfolio-theme-change', syncTheme);
+    return () => window.removeEventListener('portfolio-theme-change', syncTheme);
   }, []);
 
   const toggleTheme = () => {
@@ -22,20 +25,22 @@ export const ThemeToggle = () => {
     
     if (newTheme) {
       document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
     } else {
       document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
     }
+    try { localStorage.setItem('theme', newTheme ? 'dark' : 'light'); } catch { /* The theme still works without persistence. */ }
+    window.dispatchEvent(new CustomEvent('portfolio-theme-change', { detail: newTheme }));
   };
 
   return (
     <motion.button
+      type="button"
       onClick={toggleTheme}
       className="relative p-3 rounded-full glass hover:bg-accent/20 transition-all duration-300"
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      aria-label="Toggle theme"
+      aria-label={isDark ? 'Switch to light theme' : 'Switch to dark theme'}
+      aria-pressed={isDark}
     >
       <motion.div
         initial={false}

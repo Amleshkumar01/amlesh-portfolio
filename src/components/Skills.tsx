@@ -1,72 +1,14 @@
 import { motion } from 'framer-motion';
-import { 
-  Code, 
-  Database, 
-  Globe, 
-  Shield, 
-  Server, 
-  Smartphone,
-  Brain,
-  Zap
-} from 'lucide-react';
+import { Code, Globe, Shield, Zap } from 'lucide-react';
 
-const skillCategories = [
-  {
-    title: 'Programming Languages',
-    icon: Code,
-    skills: [
-      { name: 'JavaScript', level: 85 },
-      { name: 'Python', level: 80 },
-      { name: 'Java', level: 75 },
-      { name: 'C++', level: 70 },
-      { name: 'TypeScript', level: 78 },
-      { name: 'C', level: 72 }
-    ]
-  },
-  {
-    title: 'Frameworks & Tools',
-    icon: Zap,
-    skills: [
-      { name: 'React', level: 82 },
-      { name: 'Node.js', level: 75 },
-      { name: 'Express.js', level: 73 },
-      { name: 'MongoDB', level: 70 },
-      { name: 'Git', level: 85 },
-      { name: 'Docker', level: 60 }
-    ]
-  },
-  {
-    title: 'Web Technologies',
-    icon: Globe,
-    skills: [
-      { name: 'HTML5', level: 90 },
-      { name: 'CSS3', level: 85 },
-      { name: 'Tailwind CSS', level: 80 },
-      { name: 'REST APIs', level: 75 },
-      { name: 'GraphQL', level: 60 },
-      { name: 'Firebase', level: 65 }
-    ]
-  },
-  {
-    title: 'Networking & Security',
-    icon: Shield,
-    skills: [
-      { name: 'Network Security', level: 70 },
-      { name: 'Ethical Hacking', level: 65 },
-      { name: 'Penetration Testing', level: 60 },
-      { name: 'Cryptography', level: 62 },
-      { name: 'Wireshark', level: 68 },
-      { name: 'Kali Linux', level: 70 }
-    ]
-  }
-];
+import { skillCategories } from '@/data/skills';
 
 export const Skills = () => {
   return (
     <section id="skills" className="section-padding bg-background">
       <div className="container mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
@@ -84,7 +26,7 @@ export const Skills = () => {
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={category.title}
-              initial={{ opacity: 0, y: 50 }}
+              initial={false}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
               viewport={{ once: true }}
@@ -103,7 +45,7 @@ export const Skills = () => {
                 {category.skills.map((skill, skillIndex) => (
                   <motion.div
                     key={skill.name}
-                    initial={{ opacity: 0, x: -20 }}
+                    initial={false}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ 
                       duration: 0.5, 
@@ -122,7 +64,8 @@ export const Skills = () => {
                     </div>
                     <div className="w-full bg-muted rounded-full h-2 overflow-hidden">
                       <motion.div
-                        initial={{ width: 0 }}
+                        initial={false}
+                        style={{ width: `${skill.level}%` }}
                         whileInView={{ width: `${skill.level}%` }}
                         transition={{ 
                           duration: 1, 
@@ -142,17 +85,17 @@ export const Skills = () => {
 
         {/* Skills Summary */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
           className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
         >
           {[
-            { icon: Code, label: 'Languages', count: '6+' },
-            { icon: Zap, label: 'Frameworks', count: '8+' },
-            { icon: Database, label: 'Databases', count: '4+' },
-            { icon: Shield, label: 'Security Tools', count: '5+' }
+            { icon: Code, label: 'Languages', count: skillCategories[0].skills.length },
+            { icon: Zap, label: 'Frameworks & Tools', count: skillCategories[1].skills.length },
+            { icon: Globe, label: 'Web Technologies', count: skillCategories[2].skills.length },
+            { icon: Shield, label: 'Security Skills', count: skillCategories[3].skills.length }
           ].map((stat, index) => (
             <motion.div
               key={stat.label}

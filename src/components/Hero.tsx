@@ -1,32 +1,18 @@
 import { motion } from 'framer-motion';
 import { Download, Mail, Github, Linkedin } from 'lucide-react';
-import profileImage from '../assets/profile.jpeg';
+import profileImage from '../assets/profile-portrait.webp';
+import profileImageSmall from '../assets/profile-portrait-small.webp';
+import { contactInfo, profile } from '@/data/profile';
 
 export const Hero = () => {
-  const scrollToContact = () => {
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const handleDownloadResume = () => {
-    // This will trigger download of resume PDF
-    const link = document.createElement('a');
-    link.href = '/Amlesh_Kumar_Resume.pdf';
-    link.download = 'Amlesh_Kumar_Resume.pdf';
-    link.click();
-  };
-
   return (
     <section
       id="home"
       className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16"
-      itemScope
-      itemType="https://schema.org/Person"
+      aria-labelledby="home-heading"
     >
       {/* Animated Background */}
-      <div className="absolute inset-0 hero-gradient">
+      <div className="absolute inset-0 hero-gradient" aria-hidden="true">
         <motion.div
           className="blob w-72 h-72 bg-accent/30 top-20 -left-20"
           animate={{
@@ -59,13 +45,13 @@ export const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={false}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-center lg:text-left"
           >
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               className="inline-block px-4 py-2 rounded-full bg-foreground/10 text-foreground text-sm font-medium mb-6 backdrop-blur-sm"
@@ -74,72 +60,72 @@ export const Hero = () => {
             </motion.div>
 
             <motion.h1
-              initial={{ opacity: 0, y: 30 }}
+              id="home-heading"
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-4"
-              itemProp="name"
             >
               Amlesh Kumar
             </motion.h1>
 
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
+            <motion.p
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
               className="text-xl sm:text-2xl text-foreground/85 mb-6"
-              itemProp="jobTitle"
             >
               B.Tech CSE (2023–2027) | Aspiring Software Developer & Cybersecurity Enthusiast
-            </motion.h2>
+            </motion.p>
 
             <motion.p
-              initial={{ opacity: 0, y: 30 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1 }}
               className="text-lg text-foreground/75 mb-8 max-w-2xl"
-              itemProp="description"
             >
               Passionate computer science student at LNCT University, Bhopal, exploring the realms of software development and cybersecurity. Building innovative solutions with modern technologies.
             </motion.p>
 
             {/* CTA Buttons */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.2 }}
               className="flex flex-col sm:flex-row gap-4 mb-8"
             >
-              <motion.button
-                onClick={handleDownloadResume}
+              <motion.a
+                href={profile.resumeUrl}
+                download="Amlesh_Kumar_Resume.pdf"
                 className="btn-hero flex items-center justify-center gap-2"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 <Download className="w-5 h-5" />
                 Download Resume
-              </motion.button>
+              </motion.a>
               
-              <motion.button
-                onClick={scrollToContact}
+              <motion.a
+                href="#contact"
                 className="btn-outline flex items-center justify-center gap-2"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 <Mail className="w-5 h-5" />
                 Contact Me
-              </motion.button>
+              </motion.a>
             </motion.div>
 
             {/* Social Links */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.4 }}
               className="flex justify-center lg:justify-start gap-4"
             >
               <motion.a
-                href="https://github.com/Amleshkumar01"
+                href={contactInfo.githubHref}
+                aria-label="Amlesh Kumar on GitHub (opens in a new tab)"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-full border border-foreground/20 bg-foreground/10 text-foreground hover:bg-accent hover:text-accent-foreground transition-all duration-300"
@@ -149,7 +135,8 @@ export const Hero = () => {
                 <Github className="w-5 h-5" />
               </motion.a>
               <motion.a
-                href="https://www.linkedin.com/in/amlesh-kumar23/"
+                href={contactInfo.linkedinHref}
+                aria-label="Amlesh Kumar on LinkedIn (opens in a new tab)"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-full border border-foreground/20 bg-foreground/10 text-foreground hover:bg-accent hover:text-accent-foreground transition-all duration-300"
@@ -163,7 +150,7 @@ export const Hero = () => {
 
           {/* Profile Image */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={false}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="flex justify-center lg:justify-end"
@@ -175,9 +162,15 @@ export const Hero = () => {
             >
               <img
                 src={profileImage}
-                alt="Amlesh Kumar - Profile Picture"
+                srcSet={`${profileImageSmall} 480w, ${profileImage} 768w`}
+                sizes="(min-width: 1280px) 384px, (min-width: 1024px) 320px, 256px"
+                width={768}
+                height={1344}
+                loading="eager"
+                {...{ fetchpriority: 'high' }}
+                decoding="async"
+                alt="Amlesh Kumar, B.Tech CSE student at LNCT University, Bhopal"
                 className="w-full h-full object-cover object-[center_68%]"
-                itemProp="image"
               />
               <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-tr from-accent/20 to-transparent" />
             </motion.div>
@@ -186,7 +179,7 @@ export const Hero = () => {
 
         {/* Scroll Indicator */}
         <motion.div
-          initial={{ opacity: 0 }}
+          initial={false}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 2 }}
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"

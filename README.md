@@ -1,231 +1,67 @@
-# Amlesh Kumar - Portfolio Website
+# Amlesh Kumar's portfolio
 
-A modern, professional portfolio website built with React, TypeScript, Tailwind CSS, and Framer Motion.
+A React, TypeScript, Vite and Tailwind CSS portfolio for Amlesh Kumar, with education, skills, projects, certificates, contact channels and a portfolio assistant. The visual theme uses warm neutrals, coral accents, DM Sans and Space Grotesk.
 
-## 🚀 Features
+## Develop and verify
 
-- **Modern Design**: Clean, futuristic design with glassmorphism effects
-- **Dark/Light Theme**: Smooth animated theme toggle with localStorage persistence
-- **Responsive**: Fully responsive design that works on all devices
-- **Animations**: Smooth Framer Motion animations throughout
-- **SEO Optimized**: Proper meta tags and semantic HTML
-- **Accessible**: ARIA labels and keyboard navigation support
+Use Node.js 18 or newer and the committed npm lockfile.
 
-## 🛠️ Technologies Used
-
-- **React 18** with TypeScript
-- **Vite** for fast development and building
-- **Tailwind CSS** for styling
-- **Framer Motion** for animations
-- **Lucide React** for icons
-- **Shadcn/ui** components
-
-## 📁 Project Structure
-
-```
-src/
-├── components/          # Reusable components
-│   ├── Navigation.tsx   # Main navigation with smooth scrolling
-│   ├── Hero.tsx        # Hero section with profile photo
-│   ├── Skills.tsx      # Skills showcase with progress bars
-│   ├── Education.tsx   # Education timeline and details
-│   ├── Projects.tsx    # Projects gallery with modal details
-│   ├── Contact.tsx     # Contact form and information
-│   ├── Footer.tsx      # Footer with quick links
-│   ├── ThemeToggle.tsx # Dark/light theme switcher
-│   └── FloatingHireMe.tsx # Floating hire me button
-├── assets/             # Static assets
-│   └── profile.png     # Profile photo
-├── hooks/              # Custom React hooks
-├── lib/                # Utility functions
-├── pages/              # Page components
-└── index.css          # Global styles and design system
-```
-
-## 🎨 Design System
-
-The portfolio uses a comprehensive design system defined in `src/index.css`:
-
-- **Colors**: Deep blue primary (#0b3d91) and cyan accent (#00d4ff)
-- **Typography**: Inter font family with multiple weights
-- **Spacing**: Consistent spacing scale
-- **Shadows**: Glassmorphism effects with backdrop blur
-- **Animations**: Custom CSS animations and Framer Motion
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js 18+ and npm
-- Git
-
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd amlesh-portfolio
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Start development server**
-   ```bash
-   npm run dev
-   ```
-
-4. **Open in browser**
-   Navigate to `http://localhost:8080`
-
-## 📝 Customization Guide
-
-### 1. Replace Profile Photo
-
-- Replace `src/assets/profile.png` with your own high-quality photo
-- Recommended size: 400x400px or larger
-- Formats: PNG, JPG, or WebP
-
-### 2. Add Your Resume
-
-- Save your resume as `Amlesh_Kumar_Resume.pdf`
-- Place it in the `public/` folder
-- The download button will automatically work
-
-### 3. Update Personal Information
-
-Edit the following files to customize content:
-
-- **Hero Section**: `src/components/Hero.tsx`
-- **Skills**: `src/components/Skills.tsx`
-- **Education**: `src/components/Education.tsx`
-- **Projects**: `src/components/Projects.tsx`
-- **Contact**: `src/components/Contact.tsx`
-
-### 4. Social Media Links
-
-Update social media URLs in:
-- `src/components/Hero.tsx` (hero social links)
-- `src/components/Contact.tsx` (contact social links)
-
-### 5. Contact Information
-
-Update contact details in `src/components/Contact.tsx`:
-- Email address
-- Phone number
-- Location
-- Social media profiles
-
-### 6. SEO and Meta Tags
-
-Update `index.html`:
-- Page title
-- Meta description
-- Open Graph tags
-- Favicon
-
-## 🎯 Performance Optimizations
-
-- **Lazy Loading**: Images and components load as needed
-- **Code Splitting**: Automatic code splitting with Vite
-- **Optimized Assets**: Compressed images and minified CSS/JS
-- **Lighthouse Score**: Optimized for 90+ Lighthouse scores
-
-## 🌐 Deployment
-
-### Vercel (Recommended)
-
-1. Push your code to GitHub
-2. Connect your repository to Vercel
-3. Deploy automatically on every push
-
-### Netlify
-
-1. Build the project: `npm run build`
-2. Upload the `dist` folder to Netlify
-3. Configure redirects for SPA routing
-
-### Manual Deployment
-
-1. Build the project:
-   ```bash
-   npm run build
-   ```
-
-2. Upload the `dist` folder to your web server
-
-## 🔧 Development Commands
-
-```bash
-# Start development server
+~~~sh
+npm ci
 npm run dev
-
-# Build for production
+npm run check
 npm run build
-
-# Preview production build
+npm run check:seo
 npm run preview
+~~~
 
-# Lint code
-npm run lint
-```
+The production build creates the static site in dist and a build-only server bundle in dist-ssr. Deploy dist only. The build prerenders the actual React homepage and a noindex 404 page; the browser hydrates that HTML to enable navigation, filters, project dialogs and chat. The chatbot code is downloaded when a visitor opens it.
 
-## 🎨 Theme Customization
+The SEO check inspects the production HTML, structured data, canonical URL, headings, anchor targets, document/image paths, image attributes, social metadata, sitemap, robots.txt and the 404 page. These checks do not produce a Lighthouse score or replace visual/mobile browser testing.
 
-The design system can be customized in `src/index.css`:
+## Content sources
 
-- **Colors**: Update CSS variables for primary, accent, and neutral colors
-- **Typography**: Change font families and sizes
-- **Spacing**: Modify spacing scale
-- **Animations**: Adjust animation durations and easing
+- src/data/profile.ts: public contact details, social links and resume URL.
+- src/data/contact-channels.ts: contact cards and Direct / Code / Social categories.
+- src/data/education.ts: degree, current CGPA, school results and achievements.
+- src/data/skills.ts: listed skills and levels.
+- src/data/projects.ts: project descriptions, status, technologies and available links.
+- src/data/certifications.ts: the curated order of certificate records.
+- src/lib/seo.ts: production domain, page title, description, modification date and structured data.
 
-## 📱 Mobile Responsiveness
+Certificate PDFs live in public/certifications, with optimized previews in its previews folder. Add both files and the matching record when adding a certificate. A missing project demo or repository is not shown as a clickable link. Keep personal claims and certification titles consistent with the supplied documents.
 
-The portfolio is fully responsive with:
-- Mobile-first design approach
-- Touch-friendly interactions
-- Optimized typography scales
-- Collapsible navigation menu
+The portfolio assistant uses these same public content records. It supports common English, Hindi and Hinglish questions, and returns a limited-information response for unsupported details. It does not call a hosted AI model or require an API key.
 
-## ♿ Accessibility
+## Search and social previews
 
-- **Semantic HTML**: Proper heading hierarchy and landmarks
-- **ARIA Labels**: Screen reader friendly
-- **Keyboard Navigation**: Full keyboard support
-- **Color Contrast**: WCAG AA compliant contrast ratios
-- **Reduced Motion**: Respects `prefers-reduced-motion`
+The canonical URL is https://www.amleshkumar.tech/. The production build generates the homepage metadata, Person / ProfilePage structured data, robots.txt and sitemap from the shared SEO settings. It marks missing pages noindex instead of reusing the homepage canonical.
 
-## 🐛 Troubleshooting
+When content changes, update the real modification date in src/lib/seo.ts and public/sitemap.xml. Do not update the date merely because the site was rebuilt. Update the default index.html metadata too if changing the title, description or domain used in development.
 
-### Common Issues
+The profile portrait has responsive WebP variants. The hero is visible immediately, has explicit dimensions and a high fetch priority. Certificate previews load lazily. Navigation and project links use normal anchors; the site also provides a keyboard skip link, accessible project dialogs and reduced-motion support.
 
-1. **Images not loading**: Check file paths and formats
-2. **Animations not working**: Verify Framer Motion installation
-3. **Theme not persisting**: Check localStorage permissions
-4. **Build errors**: Clear `node_modules` and reinstall
+Social preview tags named twitter:card or twitter:image are sharing metadata, not an X/Twitter contact profile. Removing a social profile does not require removing those preview tags.
 
-### Getting Help
+## Publish on Vercel
 
-- Check the browser console for errors
-- Verify all dependencies are installed
-- Ensure Node.js version is 18 or higher
+The repository's vercel.json sets the build command and dist output directory. Vercel serves dist/404.html for missing routes. Do not add a catch-all rewrite to index.html: this site uses section anchors, and unknown paths should keep a real HTTP 404 status.
 
-## 📄 License
+Content-hashed assets under /assets receive long-lived immutable caching. HTML and stable-name documents should not receive that same immutable policy.
 
-This project is open source and available under the [MIT License](LICENSE).
+After deployment, run this read-only check:
 
-## 🤝 Contributing
+~~~sh
+npm run check:live
+~~~
 
-Feel free to fork this project and customize it for your own portfolio. If you find bugs or have suggestions, please open an issue or submit a pull request.
+It reports the public homepage, apex-domain redirect, robots.txt, sitemap and a missing path. A source-only edit does not change the live website until a deployment succeeds.
 
-## 📞 Support
+## Google Search Console
 
-If you need help customizing this portfolio or have questions:
-- Open an issue on GitHub
-- Contact: amleshkumar@example.com
+1. Verify the domain in [Google Search Console](https://search.google.com/search-console) using the owner's account and the supplied DNS or HTML verification method. Never commit private credentials.
+2. Submit https://www.amleshkumar.tech/sitemap.xml.
+3. Inspect the canonical homepage, check the rendered HTML, and request indexing after deployment.
+4. Monitor indexing, queries and Core Web Vitals over time. Link to the canonical portfolio URL from the owner's real public profiles.
 
----
-
-Built with ❤️ by Amlesh Kumar using React, TypeScript, and Tailwind CSS.
+SEO helps search engines understand and discover a site; it does not guarantee indexing, rich results or a first-place ranking. See [Google's SEO Starter Guide](https://developers.google.com/search/docs/fundamentals/seo-starter-guide) and [JavaScript SEO guidance](https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics).

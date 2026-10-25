@@ -1,44 +1,14 @@
 import { motion } from 'framer-motion';
 import { GraduationCap, Calendar, MapPin, BookOpen, Award } from 'lucide-react';
 
-const educationData = {
-  degree: 'Bachelor of Technology in Computer Science Engineering',
-  university: 'LNCT University',
-  location: 'Bhopal, Madhya Pradesh',
-  duration: '2023 - 2027',
-  cgpa: '8.5 / 10',
-  status: 'Currently Pursuing',
-  school: 'R.K.N.S.H.S. Sirsiya Gopinathpur, Muzaffarpur',
-  schoolResults: [
-    { level: 'Class 10 (2020 - 2021)', percentage: '67.8%' },
-    { level: 'Class 12 (2021 - 2023)', percentage: '68.6%' }
-  ],
-  relevantCourses: [
-    'Data Structures & Algorithms',
-    'Object-Oriented Programming',
-    'Database Management Systems',
-    'Computer Networks',
-    'Cybersecurity Fundamentals',
-    'Software Engineering',
-    'Operating Systems',
-    'Web Development',
-    'Machine Learning Basics',
-    'Discrete Mathematics'
-  ],
-  achievements: [
-    'Dean\'s List for Academic Excellence',
-    'Active member of Computer Science Society',
-    'Participated in Inter-college Coding Competition',
-    'Led team project on Campus Security System'
-  ]
-};
+import { educationData } from '@/data/education';
 
 export const Education = () => {
   return (
     <section id="education" className="section-padding bg-muted/20">
       <div className="container mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
@@ -55,7 +25,7 @@ export const Education = () => {
         <div className="max-w-4xl mx-auto">
           {/* Main Education Card */}
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={false}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
@@ -97,7 +67,7 @@ export const Education = () => {
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="text-sm font-medium text-muted-foreground">Current CGPA:</span>
-                    <span className="text-lg font-bold text-foreground">{educationData.cgpa}</span>
+                    <span className="text-lg font-bold text-foreground">{educationData.cgpa} / 10</span>
                   </div>
                 </div>
               </div>
@@ -109,7 +79,7 @@ export const Education = () => {
                   <div className="text-sm text-muted-foreground">Years Program</div>
                 </div>
                 <div className="text-center p-6 bg-primary/5 rounded-xl">
-                  <div className="text-3xl font-bold text-primary mb-1">8.5</div>
+                  <div className="text-3xl font-bold text-primary mb-1">{educationData.cgpa}</div>
                   <div className="text-sm text-muted-foreground">Current CGPA</div>
                 </div>
               </div>
@@ -118,7 +88,7 @@ export const Education = () => {
 
           {/* School Education */}
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={false}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             viewport={{ once: true }}
@@ -149,7 +119,7 @@ export const Education = () => {
 
           {/* Relevant Courses */}
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={false}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
@@ -168,7 +138,7 @@ export const Education = () => {
                 {educationData.relevantCourses.map((course, index) => (
                   <motion.div
                     key={course}
-                    initial={{ opacity: 0, x: -20 }}
+                    initial={false}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.05 }}
                     viewport={{ once: true }}
@@ -193,7 +163,7 @@ export const Education = () => {
                 {educationData.achievements.map((achievement, index) => (
                   <motion.div
                     key={achievement}
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={false}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true }}
@@ -209,7 +179,7 @@ export const Education = () => {
 
           {/* Timeline Visual */}
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={false}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             viewport={{ once: true }}
@@ -224,8 +194,8 @@ export const Education = () => {
               {[
                 { year: '2023', title: 'Enrolled in B.Tech CSE', status: 'completed' },
                 { year: '2024', title: 'Foundation Courses Completed', status: 'completed' },
-                { year: '2025', title: 'Core Subjects & Specialization', status: 'current' },
-                { year: '2026', title: 'Advanced Topics & Internship', status: 'upcoming' },
+                { year: '2025', title: 'Core Subjects & Specialization', status: 'completed' },
+                { year: '2026', title: 'Advanced Topics & Internship', status: 'current' },
                 { year: '2027', title: 'Final Project & Graduation', status: 'upcoming' }
               ].map((item, index) => (
                 <div key={item.year} className="relative flex items-center justify-center mb-8">
